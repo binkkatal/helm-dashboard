@@ -15,7 +15,10 @@ function RepositoryPage() {
   const { setSelectedRepo, selectedRepo } = useAppContext();
 
   const handleRepositoryChanged = (selectedRepository: Repository) => {
-    navigate(`/repository/${selectedRepository.name}`, {
+    // navigate(`/repository/${selectedRepository.name}`, {
+    //   replace: true,
+    // });
+    navigate(`/repository/ozone-controller`, {
       replace: true,
     });
   };
@@ -52,12 +55,12 @@ function RepositoryPage() {
 
   return (
     <div className="flex flex-row p-5 gap-4">
-      <RepositoriesList
+      {/* <RepositoriesList
         repositories={repositories}
         onRepositoryChanged={handleRepositoryChanged}
         selectedRepository={selectedRepository}
-      />
-      <div className="w-[calc(100%-21rem)]">
+      /> */}
+      <div className="w-[calc(100%)]">
         <RepositoryViewer repository={selectedRepository} />
       </div>
     </div>

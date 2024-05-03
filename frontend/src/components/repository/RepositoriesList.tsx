@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import AddRepositoryModal from "../modal/AddRepositoryModal";
+// import { useMemo } from "react";
+// import AddRepositoryModal from "../modal/AddRepositoryModal";
 import { Repository } from "../../data/types";
 import useCustomSearchParams from "../../hooks/useCustomSearchParams";
 
@@ -16,17 +16,17 @@ function RepositoriesList({
 }: RepositoriesListProps) {
   const { searchParamsObject, upsertSearchParams, removeSearchParam } =
     useCustomSearchParams();
-  const showAddRepositoryModal = useMemo(
-    () => searchParamsObject["add_repo"] === "true",
-    [searchParamsObject]
-  );
-  const setShowAddRepositoryModal = (value: boolean) => {
-    if (value) {
-      upsertSearchParams("add_repo", "true");
-    } else {
-      removeSearchParam("add_repo");
-    }
-  };
+  // const showAddRepositoryModal = useMemo(
+  //   () => searchParamsObject["add_repo"] === "true",
+  //   [searchParamsObject]
+  // );
+  // const setShowAddRepositoryModal = (value: boolean) => {
+  //   if (value) {
+  //     upsertSearchParams("add_repo", "true");
+  //   } else {
+  //     removeSearchParam("add_repo");
+  //   }
+  // };
 
   return (
     <>
@@ -56,7 +56,7 @@ function RepositoriesList({
             </span>
           ))}
         </div>
-        <button
+        {/* <button
           data-cy="install-repository-button"
           type="button"
           style={{ marginTop: "10px" }}
@@ -70,12 +70,12 @@ function RepositoriesList({
           Use{" "}
           <span className="text-green-600 font-monospace">--local-chart</span>{" "}
           CLI switch to specify it.
-        </p>
+        </p> */}
       </div>
-      <AddRepositoryModal
+      {/* <AddRepositoryModal
         isOpen={showAddRepositoryModal}
         onClose={() => setShowAddRepositoryModal(false)}
-      />
+      /> */}
     </>
   );
 }

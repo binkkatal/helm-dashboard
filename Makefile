@@ -29,3 +29,7 @@ build: build_ui build_go ; $(info $(M) Building executable...) @ ## Build progra
 .PHONY: debug
 debug: ; $(info $(M) Running dashboard in debug mode...) @
 	@DEBUG=1 ./bin/dashboard
+
+
+run:
+	@HELM_REPOSITORY_CONFIG=config/repository.yaml ./bin/dashboard

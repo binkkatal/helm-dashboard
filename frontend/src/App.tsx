@@ -1,4 +1,4 @@
-import Header from "./layout/Header";
+import Header from "./layout/HeaderOzone";
 import { HashRouter, Outlet, Route, Routes, useParams } from "react-router-dom";
 import "./index.css";
 import Installed from "./pages/Installed";
